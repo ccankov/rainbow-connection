@@ -30,6 +30,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         settings = JSON.parse(File.read(homesteadJsonPath))
     end
 
+    # Ensure that dev site is served at www.rainbowconnection.com
     settings["sites"] << { "map" => "www.rainbowconnection.com", "to" => "/home/vagrant/rainbow-connection/public" }
     settings["databases"] = ["rainbow-connection"]
 
