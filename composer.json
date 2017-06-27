@@ -43,8 +43,7 @@
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php artisan optimize",
-            "php vendor/bin/homestead make --name=rainbow_connection --hostname=www.rainbowconnection.com"
+            "php artisan optimize"
         ]
     },
     "config": {
