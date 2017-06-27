@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "RainbowConnection",
+    "description": "A web site to find and manage connections between a large number of users.",
+    "keywords": ["connection", "color"],
     "license": "MIT",
     "type": "project",
     "require": {
