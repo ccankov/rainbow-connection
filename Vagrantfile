@@ -30,6 +30,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         settings = JSON.parse(File.read(homesteadJsonPath))
     end
 
+    settings["sites"] << { "map" => "www.rainbowconnection.com", "to" => "/home/vagrant/rainbow-connection/public" }
+    settings["databases"] = ["rainbow-connection"]
+
     Homestead.configure(config, settings)
 
     if File.exist? afterScriptPath then
