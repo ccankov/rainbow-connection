@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/rainbow-connection":{"type":null,"mount_options":["uid=1000","gid=1000"],"guestpath":"/home/vagrant/rainbow-connection","hostpath":"/home/chris/Code/rainbow_connection","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/chris/Code/rainbow_connection","disabled":false,"__vagrantfile":true}}}
