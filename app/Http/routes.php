@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -15,5 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('users/', 'UsersController@index');
-Route::get('users/{user}', 'UsersController@show');
+Route::get('api/users/', 'UsersController@index');
+Route::get('api/users/{user}', 'UsersController@show');
+
+Route::get('testdata', function (Request $request) {
+  $userCount = (int)$request->query('userCount');
+  try {
+      DB::beginTransaction();
+      Artisan::call('migrate:refresh');
+      Artisan::call('db:reseed',['userCount' => $userCount]);
+      DB::commit();
+      return 'Database successfully reseeded';
+  } catch (\PDOException $e) {
+      DB::rollBack();
+  }
+});
