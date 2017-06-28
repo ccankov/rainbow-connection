@@ -15,7 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/{userid}', function ($userid) {
-    $user = DB::table('users')->find($userid);
-    dd($user);
-});
+Route::get('users/', 'UsersController@index');
+Route::get('users/{user}', 'UsersController@show');
