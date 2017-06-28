@@ -42,7 +42,7 @@
             "php artisan key:generate",
             "php artisan optimize",
             "php vendor/bin/homestead make --name=rainbow-connection --hostname=www.rainbowconnection.com",
-            "cd resources/frontend && ember install",
+            "cd resources/frontend && npm install",
             "cd resources/frontend && ember build"
         ],
         "post-update-cmd": [
