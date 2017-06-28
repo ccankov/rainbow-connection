@@ -1,0 +1,28 @@
+<table>
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Favorite Color</th>
+      <th>Connections</th>
+    </tr>
+  </thead>
+  {{#each model as |user|}}
+    <tr>
+      <td>
+        {{#link-to 'user' user}}
+          {{user.fullName}}
+        {{/link-to}}
+      </td>
+      <td>{{user.favorite_color}}</td>
+      <td>
+        {{#each user.connections as |connection|}}
+          {{#link-to 'user' connection}}
+            {{connection.firstname}} {{connection.lastname}}
+          {{/link-to}}
+        {{/each}}
+      </td>
+    </tr>
+  {{/each}}
+</table>
+
+{{outlet}}

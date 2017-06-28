@@ -26,6 +26,7 @@ class UsersTableSeeder extends Seeder
       foreach ($users as $idx => $user) {
         $currentConnections = $connectionCounts[$idx];
         $targetConnections = rand(0, 50 - $currentConnections);
+
         while ($currentConnections < $targetConnections) {
           $randomConnection = rand(0, $userCount - 1);
           if ($connectionCounts[$randomConnection] < 50) {
