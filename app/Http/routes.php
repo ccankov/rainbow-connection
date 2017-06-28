@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/{userid}', function ($userid) {
+    $user = DB::table('users')->find($userid);
+    dd($user);
+});
