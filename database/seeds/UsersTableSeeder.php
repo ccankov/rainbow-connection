@@ -11,28 +11,10 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-      DB::table('users')->insert([
-          'firstname' => str_random(10),
-          'lastname' => str_random(10),
-          'favorite_color' => str_random(10),
-          'email' => str_random(10).'@gmail.com',
-          'password' => bcrypt('secret'),
-      ]);
+      $users = factory(App\User::class, 10)->create();
 
-      DB::table('users')->insert([
-          'firstname' => str_random(10),
-          'lastname' => str_random(10),
-          'favorite_color' => str_random(10),
-          'email' => str_random(10).'@gmail.com',
-          'password' => bcrypt('secret'),
-      ]);
-
-      DB::table('users')->insert([
-          'firstname' => str_random(10),
-          'lastname' => str_random(10),
-          'favorite_color' => str_random(10),
-          'email' => str_random(10).'@gmail.com',
-          'password' => bcrypt('secret'),
-      ]);
+      $users[0]->addFriend($users[1]);
+      $users[0]->addFriend($users[2]);
+      $users[2]->addFriend($users[8]);
     }
 }

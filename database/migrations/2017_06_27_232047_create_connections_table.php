@@ -13,16 +13,15 @@ class CreateConnectionsTable extends Migration
     public function up()
     {
         Schema::create('connections', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_one');
-            $table->integer('user_two');
+            $table->integer('user_id');
+            $table->integer('connection_id');
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('connection_id')->references('id')->on('users');
+
+            $table->primary(array('user_id', 'connection_id'));
+
             $table->timestamps();
-
-            $table->foreign('user_one')->references('id')->on('users');
-            $table->foreign('user_two')->references('id')->on('users');
-
-            $table->unique(['user_one', 'user_two']);
-            $table->unique(['user_two', 'user_one']);
         });
     }
 
