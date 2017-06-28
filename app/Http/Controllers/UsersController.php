@@ -6,14 +6,15 @@ use App\User;
 
 class UsersController extends Controller
 {
-    // Queries users table for all users and returns them as JSON
-    public function index() {
-      $users = User::all();
-      return $users;
-    }
+  // Queries users table for all users and returns them as JSON
+  public function index() {
+    $users = User::select('id', 'firstname', 'lastname', 'favorite_color')->get();
+    return $users;
+  }
 
-    // Queries users table for user with specified id and returns as JSON
-    public function show(User $user) {
-      return $user;
-    }
+  // Queries users table for user with specified id and returns as JSON
+  public function show($id) {
+    $user = User::where('id','=',$id)->select('id', 'firstname', 'lastname', 'favorite_color');
+    return $user->first();
+  }
 }
