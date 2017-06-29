@@ -2,7 +2,7 @@
 <h2>Favorite Color:
   <span style={{model.myColor}}>{{model.favorite-color}}</span>
 </h2>
-
+<h3>Connections:</h3>
 <table>
   <thead>
     <tr>
@@ -14,12 +14,12 @@
     {{#each model.connections as |user|}}
     <tr>
       <td>
-        {{#link-to 'user' user}}
-          {{user.fullName}}
+        {{#link-to 'user' user.id}}
+          {{user.firstname}} {{user.lastname}}
         {{/link-to}}
       </td>
-      <td style={{user.myColor}}>{{user.favorite-color}}</td>
-      <td>
+      <td style="color: {{user.favorite-color}}">{{user.favorite-color}}</td>
+      <td class="small">
         Remove
       </td>
     </tr>
