@@ -7,8 +7,34 @@ body {
   box-sizing: border-box;
 }
 
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  border-radius: 20px;
+  border: 1px solid #D3D3D3;
+  float: left;
+  padding: 50px;
+  width: 250px;
+  margin-right: 40px;
+}
+
 h1 {
-  text-align: center;
+  padding: 10px 40px;
+  font-size: 1em;
+  margin: 0 0 20px 0;
+  border-bottom: 1px solid #D3D3D3;
+}
+
+h1 > a {
+  text-decoration: none;
+  color: black;
+}
+
+h1 > a:hover {
+  text-decoration: underline;
 }
 
 h2 {
@@ -16,20 +42,30 @@ h2 {
 }
 
 h3 {
+  margin-top: 0;
   text-align: center;
 }
 
 table {
   margin: 0 auto;
+  border-radius: 20px;
+  border: 1px solid #D3D3D3;
+  padding: 50px;
 }
 
 th {
   font-size: 1.2em;
-  text-align: left;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #D8D8D8;
 }
 
 td {
-  padding: 10px 0;
+  padding: 20px 10px;
+}
+
+tr:nth-child(2n) {
+  background-color: #efefef;
 }
 
 td:nth-child(1) {
@@ -37,6 +73,8 @@ td:nth-child(1) {
 }
 
 td:nth-child(2) {
+  font-size: 1.2em;
+  text-align: center;
   width: 200px;
 }
 
@@ -56,4 +94,9 @@ th.small {
 
 td.small {
   width: 300px;
+}
+
+td.small:nth-child(3) {
+  width: 300px;
+  text-align: center;
 }

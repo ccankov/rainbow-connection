@@ -23,7 +23,10 @@
       </td>
     </tr>
   {{/each}}
+  <tr>
+    <td colspan="3">
+      <!-- Triggers infinite scrolling when in view -->
+      {{infinity-loader infinityModel=model loadingText="Loading..." loadedText="Loaded!"}}
+    </td>
+  </tr>
 </table>
-
-<!-- Triggers infinite scrolling when in view -->
-{{infinity-loader infinityModel=model}}
