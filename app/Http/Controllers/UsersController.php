@@ -30,7 +30,7 @@ class UsersController extends Controller
       }, $users->toArray());
       return [
         "data" => $jsonUsers,
-        "meta" => ["total_pages" => User::count() / 25]
+        "meta" => ["total_pages" => ceil(User::count() / 25)]
       ];
     } else {
       // Query and return the particular user

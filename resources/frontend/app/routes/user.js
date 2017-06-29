@@ -1,5 +1,10 @@
 import Ember from 'ember';
 
+const colors = [
+  'red', 'orangered', 'orange', 'moccasin', 'yellow', 'khaki',
+  'green', 'teal', 'blue', 'mediumslateblue', 'purple', 'mediumvioletred'
+];
+
 export default Ember.Route.extend({
   model(params) {
     return this.get('store').queryRecord('user', params);

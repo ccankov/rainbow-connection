@@ -1,8 +1,14 @@
 <header>
   <h2>{{model.fullName}}</h2>
-  <h3>Favorite Color:
-    <span style={{model.myColor}}>{{model.favorite-color}}</span>
-  </h3>
+  <h3>Favorite Color:</h3>
+  <select style={{model.myColor}} {{action 'change' on='change'}}>
+    {{#each color as |item|}}
+      <option value={{read-path item optionValuePath}}>
+        {{read-path item optionLabelPath}}
+      </option>
+    {{/each}}
+  </select>
+  <span style={{model.myColor}}>{{model.favorite-color}}</span>
 </header>
 
 

@@ -15,9 +15,6 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'firstname' => $faker->firstName,
         'lastname' => $faker->lastName,
-        'email' => $faker->safeEmail,
         'favorite-color' => $faker->safeColorName,
-        'password' => str_random(10),
-        'remember_token' => str_random(10),
     ];
 });
