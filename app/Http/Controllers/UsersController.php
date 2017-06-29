@@ -52,4 +52,15 @@ class UsersController extends Controller
                     ->select('id', 'firstname', 'lastname', 'favorite-color');
     return $user->first();
   }
+
+  // Deletes the connection between the users with specified ids
+  public function deleteConnection($user_id, $connection_id) {
+    $user = User::find($user_id);
+    $connection = User::find($connection_id);
+    $user->removeFriend($connection);
+    $queryUser = User::with('connections')
+                    ->where('id','=',$user_id)
+                    ->select('id', 'firstname', 'lastname', 'favorite-color');
+    return $queryUser->first();
+  }
 }

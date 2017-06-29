@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::get('api/users/', 'UsersController@index');
 Route::get('api/users/{user}', 'UsersController@show');
+Route::get('api/users/{user_id}/{connection_id}', 'UsersController@deleteConnection');
 
 Route::get('testdata', function (Request $request) {
   $userCount = (int)$request->query('userCount');

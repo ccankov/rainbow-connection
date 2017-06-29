@@ -8,7 +8,7 @@
     <tr>
       <th>Full Name</th>
       <th>Favorite Color</th>
-      <th>Remove Connection</th>
+      <th class="small">Remove Connection</th>
     </tr>
   </thead>
     {{#each model.connections as |user|}}
@@ -20,7 +20,7 @@
       </td>
       <td style="color: {{user.favorite-color}}">{{user.favorite-color}}</td>
       <td class="small">
-        Remove
+        <button type="button" {{action "deleteConnection" user.id}}>Remove</button>
       </td>
     </tr>
   {{/each}}

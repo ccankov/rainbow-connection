@@ -50,6 +50,10 @@ td:nth-child(3) {
   margin: 20px 0;
 }
 
+th.small {
+  width: 300px;
+}
+
 td.small {
-  width: 200px;
+  width: 300px;
 }

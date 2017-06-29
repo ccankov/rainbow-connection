@@ -16,5 +16,12 @@ export default DS.Model.extend({
   myColor: Ember.computed('favorite-color', function() {
     let color = this.get('favorite-color');
     return new Ember.String.htmlSafe("color: " + color);
-  })
+  }),
+
+  // Delete connection
+  deleteConnection(connection_id) {
+    const modelName = this.constructor.modelName;
+    const adapter = this.store.adapterFor(modelName);
+    return adapter.deleteConnection(parseInt(this.get('id')), connection_id);
+  }
 });
