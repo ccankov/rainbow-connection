@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('firstname');
             $table->string('lastname');
-            $table->string('favorite_color');
+            $table->string('favorite-color');
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();

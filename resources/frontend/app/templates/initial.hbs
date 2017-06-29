@@ -6,23 +6,24 @@
       <th>Connections</th>
     </tr>
   </thead>
-  {{#each model as |user|}}
+    {{#each model as |user|}}
     <tr>
       <td>
         {{#link-to 'user' user}}
           {{user.fullName}}
         {{/link-to}}
       </td>
-      <td>{{user.favorite_color}}</td>
+      <td style={{user.myColor}}>{{user.favorite-color}}</td>
       <td>
         {{#each user.connections as |connection|}}
-          {{#link-to 'user' connection}}
+          {{#link-to 'user' connection.id}}
             {{connection.firstname}} {{connection.lastname}}
-          {{/link-to}}
+          {{/link-to}},
         {{/each}}
       </td>
     </tr>
   {{/each}}
 </table>
 
-{{outlet}}
+<!-- Triggers infinite scrolling when in view -->
+{{infinity-loader infinityModel=model}}

@@ -1,2 +1,27 @@
-<h1>{{user.fullName}}</h1>
-<h1>{{model.fullName}}</h1>
+<h1>Name: {{model.fullName}}</h1>
+<h2>Favorite Color:
+  <span style={{model.myColor}}>{{model.favorite-color}}</span>
+</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Favorite Color</th>
+      <th>Remove Connection</th>
+    </tr>
+  </thead>
+    {{#each model.connections as |user|}}
+    <tr>
+      <td>
+        {{#link-to 'user' user}}
+          {{user.fullName}}
+        {{/link-to}}
+      </td>
+      <td style={{user.myColor}}>{{user.favorite-color}}</td>
+      <td>
+        Remove
+      </td>
+    </tr>
+  {{/each}}
+</table>

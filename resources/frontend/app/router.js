@@ -7,6 +7,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  // Map frontend routes
   this.route('initial', { path: '/' });
   this.route('user', { path: '/:id' });
 });

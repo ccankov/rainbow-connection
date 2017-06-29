@@ -12,7 +12,7 @@ class User extends Authenticatable
       */
     public function connections()
     {
-      return $this->belongsToMany('App\User', 'connections', 'user_id', 'connection_id')->select('id', 'firstname', 'lastname', 'favorite_color');
+      return $this->belongsToMany('App\User', 'connections', 'user_id', 'connection_id')->select('id', 'firstname', 'lastname', 'favorite-color');
     }
 
     /**
