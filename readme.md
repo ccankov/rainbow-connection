@@ -16,7 +16,7 @@ Once this command has been run, the VM should be up and running and the environm
 
 **Note:** The environment is set up with a site mapping to www.rainbowconnection.com. After setting up an entry in /etc/hosts, the project can be accessed at www.rainbowconnection.com on the development machine.
 
-## Architeture
+## Architecture
 Database: SQLite
   - SQLite was chosen because it is lightweight and easy to set up. This choice was made early on in the development process due to time constraints. However, a significant tradeoff in choosing SQLite was discovered later in the development process - SQLite has a very low limit on the number of bulk insertions, which makes it impossible to seed the database with over 800 users in a reasonable amount of time. Its performance is also much slower compared to a more robust database option like mySQL or PostgreSQL. One of these databases would be highly preferable for production deployment.
 
